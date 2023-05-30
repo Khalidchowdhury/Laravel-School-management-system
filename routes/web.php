@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontendController;
+use App\Http\Controllers\Auth\authController;
 
 
 // School Management system
@@ -19,10 +20,14 @@ Route::get('/contact', [frontendController::class, 'contactPage']) -> name('cont
 // Dashboard Route setup
 
 
-// Auth setup 
-Route::get('/dashboard', [frontendController::class, 'indexPage']) -> name('index.page');
+// Register Auth setup 
+Route::get('/register', [authController::class, 'showRegPage']) -> name('register.page');
 
+// Login Auth setup 
+Route::get('login', [authController::class, 'showLoginPage']) -> name('login.page');
 
+// Management system main show page 
+// Route::get('/dashboard', [authController::class, 'showIndexPage']) -> name('index.page');
 
 
 
