@@ -23,7 +23,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## Project Overview
 
-<p align="center"><a href="https://rearbangla.com" target="_blank"><img src="SMS.jpg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a><img src="SMS.jpg" width="100%" alt="Laravel Logo"></a></p>
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
