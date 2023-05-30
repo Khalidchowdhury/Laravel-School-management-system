@@ -1,18 +1,38 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\frontendController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// School Management system
+
+
+
+// Frontend Route setup
+Route::get('/', [frontendController::class, 'homePage']) -> name('home.page');
+Route::get('/about', [frontendController::class, 'aboutPage']) -> name('about.page');
+Route::get('/courses', [frontendController::class, 'coursesPage']) -> name('courses.Page');
+Route::get('/contact', [frontendController::class, 'contactPage']) -> name('contact.Page');
+
+
+
+// Dashboard Route setup
+
+
+// Auth setup 
+Route::get('/dashboard', [frontendController::class, 'indexPage']) -> name('index.page');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
