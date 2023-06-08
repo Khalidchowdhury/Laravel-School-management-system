@@ -1,79 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>School Management Application Admin Dashboard</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <link rel="stylesheet" href="{{ url('/plugins/fontawesome-free/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ url('/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ url('/dist/css/adminlte.min.css') }}">
-</head>
-<body class="hold-transition login-page">
 
-<div class="login-box">
-  <div class="login-logo">
-    <a href="#"><b>Login</b> Form</a>
-  </div>
-  
-
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-
-      php
-      <form action="{{ route('authLogin.page') }}" method="POST">
-        @csrf
-        {{-- Email input --}}
-        <div class="input-group mb-3">
-          <input name="email" type="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+@extends('layouts.app')
+@section('content')
+{{-- message --}}
+{!! Toastr::message() !!}
+<div class="login-right">
+    <div class="login-right-wrap">
+        <h1>Welcome to Dashbord</h1>
+        <p class="account-subtitle">Need an account? <a href="{{ route('register') }}">Sign Up</a></p>
+        <h2>Sign in</h2>
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label>Email<span class="login-danger">*</span></label>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email">
+                <span class="profile-views"><i class="fas fa-envelope"></i></span>
             </div>
-          </div>
-        </div>
-        {{-- password input --}}
-        <div class="input-group mb-3">
-          <input name="password" type="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+            <div class="form-group">
+                <label>Password <span class="login-danger">*</span></label>
+                <input type="password" class="form-control pass-input @error('password') is-invalid @enderror" name="password">
+                <span class="profile-views feather-eye toggle-password"></span>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
+            <div class="forgotpass">
+                <div class="remember-me">
+                    <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> Remember me
+                        <input type="checkbox" name="radio">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <a href="forgot-password.html">Forgot Password?</a>
             </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Login</button>
+            </div>
+        </form>
+        <div class="login-or">
+            <span class="or-line"></span>
+            <span class="span-or">or</span>
         </div>
-      </form>
-
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p>
+        <div class="social-login">
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     </div>
-  </div>
 </div>
 
-
-
-
-
-
-    {{-- javascript file linking --}}
-    <script src="{{ url('/plugins/jquery/jquery.min.js') }}"></script>
-    <script src="{{ url('/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ url('/dist/js/adminlte.min.js') }}"></script>
-</body>
-</html>
+@endsection
