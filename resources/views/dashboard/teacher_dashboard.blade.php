@@ -29,7 +29,7 @@
                                     <h3>04/06</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ URL::to('assets/img/icons/teacher-icon-01.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ url('assets/img/icons/teacher-icon-01.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                                     <h3>40/60</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ URL::to('assets/img/icons/dash-icon-01.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ url('assets/img/icons/dash-icon-01.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                                     <h3>30/50</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ URL::to('assets/img/icons/teacher-icon-02.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ url('assets/img/icons/teacher-icon-02.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                                     <h3>15/20</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ URL::to('assets/img/icons/teacher-icon-03.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ url('assets/img/icons/teacher-icon-03.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>

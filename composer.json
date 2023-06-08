@@ -1,18 +1,30 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "This is a School Management System This is using only for School/Collage Management Purpose. If you need any type Change in this Application you massage me on my social media or UpWork...",
+    "keywords": 
+    [
+        "School Management System", 
+        "e-learning system", 
+        "Web Application", 
+        "Collage Management", 
+        "Student Management", 
+        "Teacher Management", 
+        "Employ Management", 
+        "e-commerce Application"
+    ],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
+        "php": "^8.2.0",
         "brian2694/laravel-toastr": "^5.57",
         "guzzlehttp/guzzle": "^7.4",
         "laravel/breeze": "^1.11",
-        "laravel/framework": "^9.19",
-        "laravel/sanctum": "^3.0",
+        "laravel/framework": "^10.0",
+        "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.7",
-        "laravel/ui": "^4.0"
+        "laravel/ui": "^4.0",
+        "doctrine/dbal": "^3.0",
+        "laravel/passport": "^11.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -21,7 +33,7 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -63,6 +75,6 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

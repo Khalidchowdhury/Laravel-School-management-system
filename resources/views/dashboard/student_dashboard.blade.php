@@ -29,7 +29,7 @@
                                     <h3>04/06</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{ URL::to('assets/img/icons/teacher-icon-01.svg') }}" alt="Dashboard Icon">
+                                    <img src="{{ url('assets/img/icons/teacher-icon-01.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                                     <h3>40/60</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{URL::to('assets/img/icons/teacher-icon-02.svg')}}" alt="Dashboard Icon">
+                                    <img src="{{ url('assets/img/icons/teacher-icon-02.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                                     <h3>30/50</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{URL::to('assets/img/icons/student-icon-01.svg')}}" alt="Dashboard Icon">
+                                    <img src="{{ url('assets/img/icons/student-icon-01.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                                     <h3>15/20</h3>
                                 </div>
                                 <div class="db-icon">
-                                    <img src="{{URL::to('assets/img/icons/student-icon-02.svg')}}" alt="Dashboard Icon">
+                                    <img src="{{ url('assets/img/icons/student-icon-02.svg') }}" alt="Dashboard Icon">
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         <div class="card-header">
                             <div class="row align-items-center">
                                 <div class="col-6">
-                                    <h5 class="card-title">Today’s Lesson</h5>
+                                    <h5 class="card-title">Today's Lesson</h5>
                                 </div>
                                 <div class="col-6">
                                     <ul class="chart-list-out">
@@ -116,7 +116,7 @@
                                     <div class="dash-details">
                                         <div class="lesson-activity">
                                             <div class="lesson-imgs">
-                                                <img src="{{URL::to('assets/img/icons/lesson-icon-01.svg')}}" alt="">
+                                                <img src="{{ url('assets/img/icons/lesson-icon-01.svg') }}" alt="">
                                             </div>
                                             <div class="views-lesson">
                                                 <h5>Class</h5>
@@ -125,7 +125,7 @@
                                         </div>
                                         <div class="lesson-activity">
                                             <div class="lesson-imgs">
-                                                <img src="{{URL::to('assets/img/icons/lesson-icon-02.svg')}}" alt="">
+                                                <img src="{{ url('assets/img/icons/lesson-icon-02.svg') }}" alt="">
                                             </div>
                                             <div class="views-lesson">
                                                 <h5>Lessons</h5>
@@ -134,7 +134,7 @@
                                         </div>
                                         <div class="lesson-activity">
                                             <div class="lesson-imgs">
-                                                <img src="{{URL::to('assets/img/icons/lesson-icon-03.svg')}}" alt="">
+                                                <img src="{{ url('assets/img/icons/lesson-icon-03.svg') }}" alt="">
                                             </div>
                                             <div class="views-lesson">
                                                 <h5>Time</h5>
@@ -147,7 +147,7 @@
                                     <div class="dash-details">
                                         <div class="lesson-activity">
                                             <div class="lesson-imgs">
-                                                <img src="{{URL::to('assets/img/icons/lesson-icon-04.svg')}}" alt="">
+                                                <img src="{{ url('assets/img/icons/lesson-icon-04.svg') }}" alt="">
                                             </div>
                                             <div class="views-lesson">
                                                 <h5>Asignment</h5>
@@ -156,7 +156,7 @@
                                         </div>
                                         <div class="lesson-activity">
                                             <div class="lesson-imgs">
-                                                <img src="{{URL::to('assets/img/icons/lesson-icon-05.svg')}}" alt="">
+                                                <img src="{{ url('assets/img/icons/lesson-icon-05.svg') }}" alt="">
                                             </div>
                                             <div class="views-lesson">
                                                 <h5>Staff</h5>
@@ -165,7 +165,7 @@
                                         </div>
                                         <div class="lesson-activity">
                                             <div class="lesson-imgs">
-                                                <img src="{{URL::to('assets/img/icons/lesson-icon-06.svg')}}" alt="">
+                                                <img src="{{ url('assets/img/icons/lesson-icon-06.svg') }}" alt="">
                                             </div>
                                             <div class="views-lesson">
                                                 <h5>Lesson Learned</h5>

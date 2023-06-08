@@ -68,7 +68,7 @@
                                         <h6 class="settings-size">Recommended image size is <span>150px x
                                                 150px</span></h6>
                                         <div class="upload-images">
-                                            <img src="{{ URL::to('assets/img/logo.png') }}" alt="Image">
+                                            <img src="{{ url('assets/img/logo.png') }}" alt="Image">
                                             <a href="javascript:void(0);" class="btn-icon logo-hide-btn">
                                                 <i class="feather-x-circle"></i>
                                             </a>
@@ -88,7 +88,7 @@
                                         </h6>
                                         <h6 class="settings-size mt-1">Accepted formats: only png and ico</h6>
                                         <div class="upload-images upload-size">
-                                            <img src="{{ URL::to('assets/img/favicon.png') }}" alt="Image">
+                                            <img src="{{ url('assets/img/favicon.png') }}" alt="Image">
                                             <a href="javascript:void(0);" class="btn-icon logo-hide-btn">
                                                 <i class="feather-x-circle"></i>
                                             </a>

@@ -1,28 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\ResetPasswordController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserManagementController;
-use App\Http\Controllers\TypeFormController;
 use App\Http\Controllers\Setting;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\mainController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TypeFormController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 /** for side bar menu active */
 function set_active( $route ) {
@@ -32,7 +23,16 @@ function set_active( $route ) {
     return Request::path() == $route ? 'active' : '';
 }
 
-Route::get('/', function () {
+
+// Website view route
+Route::get('/', [ mainController::class, 'showHomePage' ]) -> name('home.page');
+Route::get('/about', [ mainController::class, 'showAboutPage' ]) -> name('about.page');
+Route::get('/courses', [ mainController::class, 'showCoursesPage' ]) -> name('courses.page');
+Route::get('/contact', [ mainController::class, 'showContactPage' ]) -> name('contact.page');
+
+
+
+Route::get('/login', function () {
     return view('auth.login');
 });
 
@@ -50,7 +50,8 @@ Route::group(['middleware'=>'auth'],function()
 
 Auth::routes();
 
-// ----------------------------login ------------------------------//
+
+// Login Route
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'authenticate');
@@ -58,13 +59,15 @@ Route::controller(LoginController::class)->group(function () {
     Route::post('change/password', 'changePassword')->name('change/password');
 });
 
-// ----------------------------- register -------------------------//
+
+// Register Route
 Route::controller(RegisterController::class)->group(function () {
     Route::get('/register', 'register')->name('register');
     Route::post('/register','storeUser')->name('register');    
 });
 
-// -------------------------- main dashboard ----------------------//
+
+// Dashboard Route
 Route::controller(HomeController::class)->group(function () {
     Route::get('/home', 'index')->middleware('auth')->name('home');
     Route::get('user/profile/page', 'userProfile')->middleware('auth')->name('user/profile/page');
@@ -72,7 +75,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('student/dashboard', 'studentDashboardIndex')->middleware('auth')->name('student/dashboard');
 });
 
-// ----------------------------- user controller -------------------------//
+// User Controller Route 
 Route::controller(UserManagementController::class)->group(function () {
     Route::get('list/users', 'index')->middleware('auth')->name('list/users');
     Route::post('change/password', 'changePassword')->name('change/password');
@@ -81,12 +84,15 @@ Route::controller(UserManagementController::class)->group(function () {
     Route::post('user/delete', 'userDelete')->name('user/delete');
 });
 
-// ------------------------ setting -------------------------------//
+
+
+// Setting Route
 Route::controller(Setting::class)->group(function () {
     Route::get('setting/page', 'index')->middleware('auth')->name('setting/page');
 });
 
-// ------------------------ student -------------------------------//
+
+// Student Route
 Route::controller(StudentController::class)->group(function () {
     Route::get('student/list', 'student')->middleware('auth')->name('student/list'); // list student
     Route::get('student/grid', 'studentGrid')->middleware('auth')->name('student/grid'); // grid student
@@ -98,7 +104,8 @@ Route::controller(StudentController::class)->group(function () {
     Route::get('student/profile/{id}', 'studentProfile')->middleware('auth'); // profile student
 });
 
-// ------------------------ teacher -------------------------------//
+
+// Teacher Route
 Route::controller(TeacherController::class)->group(function () {
     Route::get('teacher/add/page', 'teacherAdd')->middleware('auth')->name('teacher/add/page'); // page teacher
     Route::get('teacher/list/page', 'teacherList')->middleware('auth')->name('teacher/list/page'); // page teacher
@@ -109,7 +116,8 @@ Route::controller(TeacherController::class)->group(function () {
     Route::post('teacher/delete', 'teacherDelete')->name('teacher/delete'); // delete record teacher
 });
 
-// ----------------------- department -----------------------------//
+
+// Department Route
 Route::controller(DepartmentController::class)->group(function () {
     Route::get('department/add/page', 'indexDepartment')->middleware('auth')->name('department/add/page'); // page add department
     Route::get('department/edit/page', 'editDepartment')->middleware('auth')->name('department/edit/page'); // page add department

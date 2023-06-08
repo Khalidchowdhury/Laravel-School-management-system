@@ -25,7 +25,7 @@
                             </div>
                             <div class="student-profile-head">
                                 <div class="profile-bg-img">
-                                    <img src="{{ URL::to('assets/img/profile-bg.jpg') }}" alt="Profile">
+                                    <img src="{{ url('assets/img/profile-bg.jpg') }}" alt="Profile">
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4">
@@ -91,7 +91,7 @@
                                         </div>
                                         <div class="personal-activity">
                                             <div class="personal-icons">
-                                                <img src="{{ URL::to('assets/img/icons/buliding-icon.svg') }}" alt="">
+                                                <img src="{{ url('assets/img/icons/buliding-icon.svg') }}" alt="">
                                             </div>
                                             <div class="views-personal">
                                                 <h4>Department </h4>

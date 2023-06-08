@@ -1,15 +1,11 @@
 <div class="sidebar" id="sidebar">
     <div class="sidebar-inner slimscroll">
         <div id="sidebar-menu" class="sidebar-menu">
+
+            {{-- Dashboard sidebar menu start --}}
             <ul>
                 <li class="menu-title">
                     <span>Main Menu</span>
-                </li>
-                <li class="{{set_active(['setting/page'])}}">
-                    <a href="{{ route('setting/page') }}">
-                        <i class="fas fa-cog"></i> 
-                        <span>Settings</span>
-                    </a>
                 </li>
                 <li class="submenu {{set_active(['home','teacher/dashboard','student/dashboard'])}}">
                     <a href="#"><i class="feather-grid"></i>
@@ -99,6 +95,12 @@
                 <li class="menu-title">
                     <span>Management</span>
                 </li>
+                <li class="{{set_active(['setting/page'])}}">
+                    <a href="{{ route('setting/page') }}">
+                        <i class="fas fa-cog"></i> 
+                        <span>Settings</span>
+                    </a>
+                </li>
                 <li class="submenu">
                     <a href="#"><i class="fas fa-file-invoice-dollar"></i>
                         <span> Accounts</span>
@@ -132,6 +134,11 @@
                     <a href="library.html"><i class="fas fa-book"></i> <span>Library</span></a>
                 </li>
             </ul>
+
+
+
+
+
         </div>
     </div>
 </div>
