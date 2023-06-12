@@ -114,9 +114,10 @@
                                             <label>Religion <span class="login-danger">*</span></label>
                                             <select class="form-control select @error('religion') is-invalid @enderror" name="religion">
                                                 <option selected disabled>Please Select Religion </option>
-                                                <option value="Hindu" {{ old('religion') == 'Hindu' ? "selected" :""}}>Hindu</option>
-                                                <option value="Christian" {{ old('religion') == 'Christian' ? "selected" :""}}>Christian</option>
-                                                <option value="Others" {{ old('religion') == 'Others' ? "selected" :""}}>Others</option>
+                                                <option value="Muslim" {{ old('religion') == 'Hindu' ? "selected" :""}}>Muslim</option>
+                                                <option value="Hindu" {{ old('religion') == 'Christian' ? "selected" :""}}>Hindu</option>
+                                                <option value="Christian" {{ old('religion') == 'Others' ? "selected" :""}}>Christan</option>
+                                                <option value="Other" {{ old('religion') == 'Others' ? "selected" :""}}>other</option>
                                             </select>
                                             @error('religion')
                                                 <span class="invalid-feedback" role="alert">

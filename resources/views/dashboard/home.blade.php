@@ -4,12 +4,13 @@
 
 
 {{-- message --}}
-{!! Toastr::message() !!}
 <div class="page-wrapper">
     <div class="content container-fluid">
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-12">
+                    {{-- Error & Success Massage --}}
+                    @include('validate')
                     <div class="page-sub-header">
                         <h3 class="page-title">Welcome {{ Session::get('name') }}!</h3>
                         <ul class="breadcrumb">

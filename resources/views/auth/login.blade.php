@@ -3,19 +3,18 @@
 
 
 {{-- message --}}
-{!! Toastr::message() !!}
 <div class="login-right">
     <div class="login-right-wrap">
         <h1>Please Login Your Account</h1>
         <p class="account-subtitle">Need an account? <a href="{{ route('register') }}">Sign Up</a></p>
         <h2>Sign in</h2>
 
-
+        @include('validate')
         {{-- Login Form --}}
         <form action="{{ route('login') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label>Email<span class="login-danger">*</span></label>
+                <label>Email<span class="login-danger mt-5">*</span></label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email">
                 <span class="profile-views"><i class="fas fa-envelope"></i></span>
             </div>

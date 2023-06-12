@@ -84,11 +84,9 @@ class LoginController extends Controller
                 Session::put('avatar', $user->avatar);
                 Session::put('position', $user->position);
                 Session::put('department', $user->department);
-                Toastr::success('Login successfully :)','Success');
-                return redirect()->intended('home');
+                return redirect()->route('home')->with('success', 'You are Login Successfully');
             } else {
-                Toastr::error('fail, WRONG USERNAME OR PASSWORD :)','Error');
-                return redirect('login');
+                return redirect('login')->with('danger', 'You are Failed. Please try again');
             }
            
         } catch(\Exception $e) {
