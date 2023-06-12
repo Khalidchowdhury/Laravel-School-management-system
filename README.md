@@ -1,7 +1,7 @@
 # Laravel School Management Application (S.M.S).
 <p align="center"><a href="https://www.facebook.com/khalidhasan.chowdhury.10/">
 <img src="sms.jpg" 
-width="400" 
+width="100%" 
 alt="Laravel Logo"></a>
 </p>
 
