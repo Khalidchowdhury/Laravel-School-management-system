@@ -1,11 +1,15 @@
 # Laravel School Management Application (S.M.S).
-
+<p align="center"><a href="https://www.facebook.com/khalidhasan.chowdhury.10/">
+<img src="sms.jpg" 
+width="400" 
+alt="Laravel Logo"></a>
+</p>
 
 
 ## This Application Feature 
 
 1. Student Information Create, Read, Update, Delete.
-1. Student Information Create, Read, Update, Delete.
+1. Teacher Information Create, Read, Update, Delete.
 3. Admin, Student & Teacher different Authentication system.
 4. Admin, Student & Teacher different Dashboard.
 5. Student Class & Exam Schedule.
