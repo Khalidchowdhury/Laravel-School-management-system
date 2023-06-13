@@ -119,7 +119,7 @@
                     <a href="holiday.html"><i class="fas fa-holly-berry"></i> <span>Holiday</span></a>
                 </li>
                 <li>
-                    <a href="fees.html"><i class="fas fa-comment-dollar"></i> <span>Fees</span></a>
+                    <a href="{{ route('fees.page') }}"><i class="fas fa-comment-dollar"></i> <span>Fees</span></a>
                 </li>
                 <li>
                     <a href="exam.html"><i class="fas fa-clipboard-list"></i> <span>Exam list</span></a>

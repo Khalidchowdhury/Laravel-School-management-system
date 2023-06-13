@@ -4,6 +4,7 @@ use App\Http\Controllers\Setting;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\mainController;
+use App\Http\Controllers\featureController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TypeFormController;
@@ -121,4 +122,22 @@ Route::controller(TeacherController::class)->group(function () {
 Route::controller(DepartmentController::class)->group(function () {
     Route::get('department/add/page', 'indexDepartment')->middleware('auth')->name('department/add/page'); // page add department
     Route::get('department/edit/page', 'editDepartment')->middleware('auth')->name('department/edit/page'); // page add department
+});
+
+
+
+
+/**
+ * 
+ * Others Route Setup
+ * 
+ */
+
+// Fees Route 
+Route::controller(featureController::class)->group(function () {
+    Route::get('fees', 'fees') -> name('fees.page');
+    Route::get('edit-fees', 'editfees') -> name('edit.fees');
+    Route::get('add-fees', 'addfees') -> name('add.fees');
+    Route::Post('add-fees', 'createFess') -> name('create.fees');
+    Route::get('view-fees', 'viewfees') -> name('view.fees');
 });
