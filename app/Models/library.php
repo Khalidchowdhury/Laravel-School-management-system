@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class library extends Model
+class library extends User
 {
     use HasFactory;
+    protected $table = 'libraries';
+    protected $fillable = ['book_name', 'department', 'language', 'type', 'status'];
 }

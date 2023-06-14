@@ -27,7 +27,8 @@
 
 
         {{-- Add Book Form --}}
-        <form>
+        <form action="{{ route('addLibrary.page') }}" method="POST">
+            @csrf
             <div class="row">
                 <div class="col-12">
                     <h5 class="form-title"><span>Book Information</span></h5>
@@ -37,19 +38,19 @@
                 <div class="col-12 col-sm-4">
                     <div class="form-group local-forms">
                         <label>Book Name</label>
-                        <input type="text" class="form-control">
+                        <input name="book_name" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="col-12 col-sm-4">
                     <div class="form-group local-forms">
                         <label>Department <span class="login-danger">*</span></label>
-                        <input type="text" class="form-control">
+                        <input name="department" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="col-12 col-sm-4">
                     <div class="form-group local-forms">
                         <label>Language <span class="login-danger">*</span></label>
-                        <select class="form-control select">
+                        <select name="language" class="form-control select">
                             <option>Select Language</option>
                             <option>Bangla</option>
                             <option>English</option>
@@ -65,7 +66,7 @@
                 <div class="col-12 col-sm-4">
                     <div class="form-group local-forms">
                         <label>Type <span class="login-danger">*</span></label>
-                        <select class="form-control select">
+                        <select name="type" class="form-control select">
                             <option>Select Type</option>
                             <option>Book</option>
                             <option>DVD</option>
@@ -77,7 +78,7 @@
                 <div class="col-12 col-sm-4">
                     <div class="form-group local-forms">
                         <label>Status <span class="login-danger">*</span></label>
-                        <select class="form-control select">
+                        <select name="status" class="form-control select">
                             <option>Select Status</option>
                             <option class="badge badge-success">In Stock</option>
                             <option class="badge badge-danger">Out of Stock</option>

@@ -20,6 +20,7 @@
     
     <div class="row">
         <div class="col-sm-12">
+            @include('validate')
             <div class="card card-table">
                 <div class="card-body">
 
@@ -30,7 +31,7 @@
             <h3 class="page-title">All Book List</h3>
         </div>
             <div class="col-auto text-end float-end ms-auto download-grp">
-                <a href="{{ route('addLibrary.page') }}" class="btn btn-primary">Add Book <i class="fas fa-plus"></i> </a>
+                <a href="{{ route('showLibrary.page') }}" class="btn btn-primary">Add Book <i class="fas fa-plus"></i> </a>
             </div>
         </div>
     </div>
@@ -53,20 +54,22 @@
 
             {{-- Sub Table  --}}
         <tbody>
-            <tr>
-            <td>Socialogy</td>
-            <td>Bangla</td>
-            <td>Science</td>
-            <td>Board Book</td>
-            <td>In Stock</td>
-            <td>
-                <div class="actions">
-                    <a href="#" class="btn btn-sm bg-success-light"><i class="feather-eye"></i></a>
-                    <a href="#" class="btn btn-sm bg-danger-light"><i class="feather-edit"></i></a>
-                    <a href="#" class="btn btn-sm bg-danger-light"><i class="feather-delete"></i></a>
-                </div>
-            </td>
-            </tr>
+            @foreach ($librarys as $library)
+                <tr>
+                    <td>{{ $library -> book_name }}</td>
+                    <td>{{ $library -> department }}</td>
+                    <td>{{ $library -> language }}</td>
+                    <td>{{ $library -> type }}</td>
+                    <td>{{ $library -> status }}</td>
+                    <td>
+                        <div class="actions">
+                            <a href="#" class="btn btn-sm bg-success-light"><i class="feather-eye"></i></a>
+                            <a href="#" class="btn btn-sm bg-danger-light"><i class="feather-edit"></i></a>
+                            <a href="#" class="btn btn-sm bg-danger-light"><i class="feather-delete"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
 
         </table>

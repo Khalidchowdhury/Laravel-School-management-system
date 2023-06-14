@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\library;
 use Illuminate\Http\Request;
 
 class featureController extends Controller
@@ -78,13 +79,41 @@ class featureController extends Controller
     // Library Controller
     public function library()
     {
-        return view('features.library.library');
+        $librarys = library::get();
+        return view('features.library.library',[
+            'librarys' => $librarys
+        ]);
     }
-    // Add Library 
-    public function addLibrary()
+    // show Library 
+    public function showLibrary()
     {
         return view('features.library.add-books');
     }
+    // Add Library 
+    public function addLibrary(Request $request)
+    {
+        $this->validate($request,[
+            'book_name'  => 'required',
+            'department' => 'required',
+            'language'   => 'required',
+            'type'       => 'required',
+            'status'     => 'required',
+        ]);
+        
+        library::create([
+            'book_name'  => $request -> book_name,
+            'department' => $request -> department,
+            'language'   => $request -> language,
+            'type'       => $request -> type,
+            'status'     => $request -> status,
+        ]);
+        return redirect() -> route('library.page') -> with('success','Your Book has been added');
+    }
+
+
+
+
+
 
     // Event Page 
     public function showEventPage()

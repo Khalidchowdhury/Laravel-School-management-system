@@ -151,7 +151,8 @@ Route::controller(featureController::class)->group(function () {
 
     // Library Route
     Route::get('library', 'library') -> name('library.page');
-    Route::get('add-library', 'addLibrary') -> name('addLibrary.page');
+    Route::get('add-library', 'showLibrary') -> name('showLibrary.page');
+    Route::post('add-library', 'addLibrary') -> name('addLibrary.page');
     // Event Route
     Route::get('event', 'showEventPage') -> name('event.page');
     // holiday Route
