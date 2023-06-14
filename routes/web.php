@@ -140,4 +140,20 @@ Route::controller(featureController::class)->group(function () {
     Route::get('add-fees', 'addfees') -> name('add.fees');
     Route::Post('add-fees', 'createFess') -> name('create.fees');
     Route::get('view-fees', 'viewfees') -> name('view.fees');
+
+    // Time Table Route
+    Route::get('time-table', 'timeTable') -> name('time.page');
+    Route::get('invoice', 'invoisePage') -> name('invoice.page');
+
+    // salary Route
+    Route::get('salary', 'salaryPage') -> name('salary.page');
+    Route::get('add-salary', 'addSalary') -> name('addSalary.page');
+
+    // Library Route
+    Route::get('library', 'library') -> name('library.page');
+    Route::get('add-library', 'addLibrary') -> name('addLibrary.page');
+    // Event Route
+    Route::get('event', 'showEventPage') -> name('event.page');
+    // holiday Route
+    Route::get('holiday', 'Holiday') -> name('holiday.page');
 });

@@ -8,25 +8,5 @@
 }
 
 
-*** Exam {
-    Process{
-        1. Make a Route 
-        2. Setup Blade File 
-        3. View use Controller 
-        4. Make Dynamic 
-    }
-}
-
-
-*** Events {
-    Process{
-        1. Make a Route 
-        2. Setup Blade File 
-        3. View use Controller 
-        4. Make Dynamic 
-    }
-}
-
-
 
 
