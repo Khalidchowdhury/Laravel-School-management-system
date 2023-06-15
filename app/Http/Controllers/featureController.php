@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fees;
 use App\Models\library;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class featureController extends Controller
     public function createFess(Request $request)
     {
         $this->validate($request,[
-            'fees-id' => 'required',
+            'fees_id' => 'required',
             'name'    => 'required',
             'class'   => 'required',
             'shift'   => 'required',
@@ -29,7 +30,20 @@ class featureController extends Controller
             'sDate'   => 'required',
             'eDate'   => 'required',
         ]);
-        return $request -> all();
+        Fees::create([
+            'fees_id' => $request -> fees_id,
+            'name'    => $request -> name,
+            'class'   => $request -> class,
+            'shift'   => $request -> shift,
+            'gender'  => $request -> gender,
+            'amount'  => $request -> amount,
+            'paid'    => $request -> paid,
+            'due'     => $request -> due,
+            'sDate'   => $request -> sDate,
+            'eDate'   => $request -> eDate,
+        ]);
+        return redirect() -> route('fees.page') -> with('success', 'Your Fees Has been Addested');
+
     }
 
 

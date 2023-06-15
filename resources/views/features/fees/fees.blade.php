@@ -21,6 +21,7 @@
 
             <div class="row">
                 <div class="col-sm-12">
+                    @include('validate')
                     <div class="card card-table">
                         <div class="card-body">
                             <div class="page-header">

@@ -40,7 +40,7 @@
             <div class="col-12 col-sm-6">
                 <div class="form-group">
                     <label>Fees ID</label>
-                    <input name="fees-id" type="text" class="form-control">
+                    <input name="fees_id" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-12 col-sm-6">
