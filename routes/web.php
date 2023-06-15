@@ -153,8 +153,15 @@ Route::controller(featureController::class)->group(function () {
     Route::get('library', 'library') -> name('library.page');
     Route::get('add-library', 'showLibrary') -> name('showLibrary.page');
     Route::post('add-library', 'addLibrary') -> name('addLibrary.page');
+
     // Event Route
     Route::get('event', 'showEventPage') -> name('event.page');
+    Route::get('view-event/{id}', 'viewEventPage') -> name('view.event.page');
+    Route::get('add-event', 'addEventPage') -> name('add.event.page');
+    Route::post('add-event', 'regEventPage') -> name('reg.event.page');
+    Route::get('eventDestroy/{id}', 'deleteEventPage') -> name('delete.event.page');
+
+
     // holiday Route
     Route::get('holiday', 'Holiday') -> name('holiday.page');
 });

@@ -79,10 +79,9 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="{{ route('invoice.page') }}">
-                        <i class="fas fa-clipboard"></i>
-                        <span> Invoices</span>
-                    </a>
+                    <li>
+                        <a href="{{ route('invoice.page') }}"><i class="fas fa-clipboard"></i> <span>Invoise</span></a>
+                    </li>
                 </li>
                 <li class="menu-title">
                     <span>Management</span>

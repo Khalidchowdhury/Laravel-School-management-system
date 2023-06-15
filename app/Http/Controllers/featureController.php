@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fees;
+use App\Models\Event;
 use App\Models\library;
 use Illuminate\Http\Request;
 
@@ -134,13 +135,68 @@ class featureController extends Controller
 
 
 
+    /**
+     * 
+     * Event Controller
+     * 
+     */
 
     // Event Page 
     public function showEventPage()
     {
-        return view('features.event');
+        $events = Event::get();
+        return view('features.event.event', [
+            'events' => $events
+        ]);
     }
+    // Event single view page 
+    public function viewEventPage($id)
+    {
+        $events = Event::findOrFail($id);
+        return view('features.event.view',[
+            'events' => $events
+        ]);
+    }
+    // add event page 
+    public function addEventPage()
+    {
+        return view('features.event.add');
+    }
+    public function regEventPage(Request $request)
+    {
+        $this->validate($request, [
+            'title'       => 'required',
+            'description' => 'required',
+            'button_name' => 'required',
+            'button_link' => 'required',
+        ]);
+        Event::create([
+            'title'       => $request -> title,
+            'description' => $request -> description,
+            'button_name' => $request -> button_name,
+            'button_link' => $request -> button_link,
+        ]);
 
+        return redirect() -> route('event.page') -> with('success', 'Your announcement has been successfully added.');
+
+    }
+    // event delete 
+    public function deleteEventPage($id)
+    {
+        $delete_data = Event::findOrFail($id);
+        $delete_data ->  delete();
+        
+        return redirect() -> route('event.page') -> with('success', 'Your announcement delete successfully .');
+    } 
+
+
+
+
+
+
+
+
+    // Holiday page 
     public function holiday()
     {
         return view('features.holiday');

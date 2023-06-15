@@ -13,7 +13,7 @@
     <h3 class="page-title">Events</h3>
     <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-    <li class="breadcrumb-item active">Events</li>
+    <li class="breadcrumb-item active"><a href="{{ route('event.page') }}">Events</a></li>
     </ul>
     </div>
     </div>
@@ -22,7 +22,7 @@
     <div class="row align-items-center">
     <div class="col"></div>
     <div class="col-auto text-end float-end ms-auto">
-    <a href="add-events.html" class="btn btn-primary">Add Announcement <i class="fas fa-plus"></i></a>
+    <a href="{{ route('event.page') }}" class="btn btn-primary">Back</a>
     </div>
     </div>
     </div>
@@ -36,19 +36,21 @@
 
         <!-- Hero -->
         <div class="p-4 shadow-4 rounded-3" style="background-color: hsl(0, 0%, 94%);">
-            <h2>বার্ষিক বনভোজন </h2>
-            <p>
-                রাজশাহী বিশ্ববিদ্যালয়ের গণযোগাযোগ ও সাংবাদিকতা বিভাগের প্রাক্তন শিক্ষার্থীদের সংগঠন জার্নালিজম অ্যালামনাই ফোরাম অব রাজশাহী ইউনিভার্সিটির (জাফরু) বার্ষিক বনভোজন অনুষ্ঠিত হয়েছে। দিনভর আড্ডা, সাংস্কৃতিক অনুষ্ঠান, মেয়েদের পিলো পাস, বাচ্চাদের দৌড় প্রতিযোগিতা, র্যাফল ড্রসহ বিভিন্ন আনন্দ-উল্লাসে মেতে ওঠেন গণযোগাযোগ ও সাংবাদিকতা বিভাগের সাবেক শিক্ষার্থীরা।
+            <h2 class="text-center p-4">{{ $events -> title }}</h2>
+            <hr>
+            <p class="mt-5 text-justify">
+                {{ $events -> description }}    
             </p>
         
             <hr class="my-4" />
         
-            <p>
-                <span class="text-danger">বিশেষ দ্রঃ </span>: পিকনিকের ছাড়া ১২৫০ টাকা প্রতিজনের 
-            </p>
-            <button type="button" class="btn btn-primary">
-            Participant Now
-            </button>
+            <div class="centerBtn text-center mt-5">
+                <button type="button" class="btn btn-primary">
+                    <a class="text-light" href="{{ $events -> button_link }}">{{ $events -> button_name }}</a>
+                </button>
+            </div>
+
+            </div>
         </div>
         <!-- Hero --> 
 
