@@ -57,11 +57,11 @@
                     <label>Class</label>
                     <select name="class" class="form-control select">
                         <option>Select Type</option>
-                        <option>Class 6</option>
-                        <option>Class 7</option>
-                        <option>Class 8</option>
-                        <option>Class 9</option>
-                        <option>Class 10</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
                     </select>
                 </div>
             </div>

@@ -12,7 +12,7 @@ class featureController extends Controller
 
     // add feacher
     public function addfees()
-    {
+    {   
         return view('features.fees.add');
     }
     // add feacher
@@ -42,7 +42,7 @@ class featureController extends Controller
             'sDate'   => $request -> sDate,
             'eDate'   => $request -> eDate,
         ]);
-        return redirect() -> route('fees.page') -> with('success', 'Your Fees Has been Addested');
+        return redirect() -> route('fees.page') -> with('success', 'Your Fees Has been Added');
 
     }
 
@@ -51,7 +51,10 @@ class featureController extends Controller
     // Fees Controller 
     public function fees()
     {
-        return view('features.fees.fees');
+        $fees = fees::get();
+        return view('features.fees.fees',[
+            'fees' => $fees
+        ]);
     }
     // Edit feachers
     public function editfees()
@@ -59,9 +62,12 @@ class featureController extends Controller
         return view('features.fees.edit');
     }
     // View feacher
-    public function viewfees()
+    public function viewfees($id)
     {
-        return view('features.fees.view');
+        $fees = Fees::findOrFail($id);
+        return view('features.fees.view',[
+            'fees' => $fees
+        ]);
     }
     
 

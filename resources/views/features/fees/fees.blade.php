@@ -53,17 +53,18 @@
                                     </thead>
 
                                     <tbody>
+                                        @foreach ($fees as $fees)
                                         <tr>
-                                            <td> PRE1234 </td>
-                                            <td> Khalid Hasan </td>
-                                            <td> 5 </td>
-                                            <td> 2500 ৳</td>
-                                            <td> 1200 ৳</td>
-                                            <td> 1300 ৳ </td>
-                                            <td> 28 Apr 2020 </td>
+                                            <td> {{ $fees -> fees_id }} </td>
+                                            <td> {{ $fees -> name }} </td>
+                                            <td> {{ $fees -> class }} </td>
+                                            <td> <b>{{ $fees -> amount }}</b> </td>
+                                            <td> {{ $fees -> paid }} </td>
+                                            <td> {{ $fees -> due }} </td>
+                                            <td> {{ $fees -> sDate }} </td>
                                             <td>
                                                 <div class="actions">
-                                                <a href="{{ route('view.fees') }}" class="btn btn-sm bg-success-light me-2">
+                                                <a href="{{ route('view.fees', $fees -> id) }}" class="btn btn-sm bg-success-light me-2">
                                                 <i class="feather-eye"></i>
                                                 </a>
                                                 <a href="{{ route('edit.fees') }}" class="btn btn-sm bg-danger-light">
@@ -75,6 +76,7 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

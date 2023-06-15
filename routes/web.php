@@ -139,7 +139,7 @@ Route::controller(featureController::class)->group(function () {
     Route::get('edit-fees', 'editfees') -> name('edit.fees');
     Route::get('add-fees', 'addfees') -> name('add.fees');
     Route::Post('add-fees', 'createFess') -> name('create.fees');
-    Route::get('view-fees', 'viewfees') -> name('view.fees');
+    Route::get('view-fees/{id}', 'viewfees') -> name('view.fees');
 
     // Time Table Route
     Route::get('time-table', 'timeTable') -> name('time.page');
